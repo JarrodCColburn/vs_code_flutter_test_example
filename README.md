@@ -15,6 +15,9 @@ Steps:
 5. Type and Select `Dart: Run all tests`
     * the single test should **fail**
 
+Conclusion:
+    **Tests should not be succeeding from terminal, but failing from extension. This is inconsistent**
+
 Reason:
 The reason for the difference is the use of the dart.io class `File` when used with a relative path. 
 
