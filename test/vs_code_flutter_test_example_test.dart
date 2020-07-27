@@ -1,13 +1,16 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:vs_code_flutter_test_example/vs_code_flutter_test_example.dart';
+import 'dart:io' show File;
 
+const String path = './hello.txt';
+
+const String expectedString = 'Hello World';
 void main() {
-  test('adds one to input values', () {
-    final calculator = Calculator();
-    expect(calculator.addOne(2), 3);
-    expect(calculator.addOne(-7), -6);
-    expect(calculator.addOne(0), 1);
-    expect(() => calculator.addOne(null), throwsNoSuchMethodError);
+  test(
+      'This will succeed if run from terminal, but fail if run with VS Code extension',
+      () {
+    expect(File(path).readAsStringSync(), expectedString);
   });
 }
+// In order to make succeed in VS Code, set `path = ./test/hello.txt`, but the
+// terminal will then fail with new path.
