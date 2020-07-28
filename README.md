@@ -10,13 +10,13 @@ Steps:
 1. Clone repo
 2. cd into project root (vs_code_flutter_test_example)
 3. from terminal, run `flutter test`
-    * the single test should **succeed**
+    * the single test should **succeed** 🟢
 4. from VS Code, bring up Command Palette (Ctrl+Shift+P on linux)
 5. Type and Select `Dart: Run all tests`
-    * the single test should **fail**
+    * the single test should **fail** 🔴
 
 Conclusion:
-    **Tests should not be succeeding from terminal, but failing from extension. This is inconsistent**
+    ❗ **Tests should not be succeeding from terminal, but failing from extension. This is inconsistent** ❗
 
 Reason:
 The reason for the difference is the use of the dart.io class `File` when used with a relative path. 
